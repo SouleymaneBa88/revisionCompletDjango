@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock  %}</title>
+</head>
+<body>
+    <h1>hello world 1</h1>
+    {% if user.is_authenticated %}
+    <form action="{%url 'logout'  %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Se deconnecter</button>
+    </form>
+    {% elif  user.is_not_authenticated %}
+     <form action="{%url 'inscription'  %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Inscrivez-vous</button>
+    </form>
+    {% else %}
+    <form action="{%url 'login'  %}" method="post">
+        {% csrf_token %}
+        <button type="submit">connexion</button>
+    </form>
+    {% endif %}
+
+    {% block content %}
+    {% endblock  %}
+</body>
+</html>

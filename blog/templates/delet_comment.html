@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Voulez-vous supprimer ce commentaire</p>
+<form method="post">
+    {% csrf_token %}
+
+    <button type="submit">Oui</button>
+</form>
+{% endblock  %}

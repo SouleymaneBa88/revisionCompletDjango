@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+Categorie JoJ News
+{% endblock  %}
+
+{% block content %}
+<h1>Liste categorie</h1>
+{% for categorie in categories %}
+<h2>{{categorie.nom_categorie}}</h2>
+<p>{{categorie.description}}</p>
+<p>{{categorie.date_creation}}</p>
+<hr>
+{% endfor %}
+{% endblock  %}
