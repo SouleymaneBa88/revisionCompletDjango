@@ -9,6 +9,3 @@ class Commentform(forms.ModelForm):
         model = Commentaire
         fields = ['message'] 
 
-# class InscriptionForm(UserCreationForm):
-#     class Meta:
-#         model = User

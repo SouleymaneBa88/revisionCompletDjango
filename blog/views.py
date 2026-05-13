@@ -50,7 +50,6 @@ class updateCommente(UpdateView):
     model = Commentaire
     form_class = Commentform
     template_name = 'update_comment.html'
-    # success_url = reverse_lazy('detail_article')
 
     def get_success_url(self):
         return reverse('detail_article', kwargs={'pk':self.object.article.pk})
